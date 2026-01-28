@@ -3,6 +3,7 @@ import { prisma } from "@/lib/prisma";
 import { getUserFromRequest } from "@/lib/auth";
 
 export async function GET(request, { params }) {
+  params = await params;
   try {
     const userId = getUserFromRequest(request);
 
@@ -36,6 +37,7 @@ export async function GET(request, { params }) {
 }
 
 export async function PATCH(request, { params }) {
+  params = await params;
   try {
     const userId = getUserFromRequest(request);
 
@@ -94,6 +96,7 @@ export async function PATCH(request, { params }) {
 }
 
 export async function DELETE(request, { params }) {
+  params = await params;
   try {
     const userId = getUserFromRequest(request);
 
